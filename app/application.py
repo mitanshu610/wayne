@@ -65,7 +65,7 @@ def get_app() -> FastAPI:
 
     payments_app.include_router(api_router)
     payments_app.add_middleware(SessionMiddleware, secret_key="** Session Middleware **")
-    payments_app.add_middleware(SecurityHeadersMiddleware)
+    # payments_app.add_middleware(SecurityHeadersMiddleware)    
 
     FastAPIInstrumentor.instrument_app(payments_app)
     return payments_app
