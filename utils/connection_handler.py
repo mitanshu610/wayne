@@ -4,7 +4,6 @@ from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config.settings import loaded_config
-from utils.kafka import AsyncEventEmitterWrapper
 
 
 class ConnectionHandler:
@@ -12,7 +11,6 @@ class ConnectionHandler:
     def __init__(self, connection_manager=None, event_bridge=None):
         self._session: Optional[AsyncSession] = None
         self._connection_manager = connection_manager
-        self._event_emitter: Optional[AsyncEventEmitterWrapper] = None
 
     @property
     def session(self):
@@ -23,8 +21,6 @@ class ConnectionHandler:
 
     @property
     def event_emitter(self):
-        if not self._event_emitter:
-            self._event_emitter = AsyncEventEmitterWrapper()
         return self._event_emitter
 
     async def session_commit(self):
