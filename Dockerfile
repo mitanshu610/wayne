@@ -53,6 +53,7 @@ WORKDIR /srv/wayne
 RUN mkdir /srv/wayne/repos
 #COPY --from=builder /srv/wayne .
 #COPY --from=builder /opt/venv /opt/venv
+ENV ENVIRONMENT docker
 
 RUN python3 startup.py --all
 
