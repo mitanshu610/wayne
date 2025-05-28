@@ -54,7 +54,7 @@ RUN mkdir /srv/wayne/repos
 #COPY --from=builder /srv/wayne .
 #COPY --from=builder /opt/venv /opt/venv
 
-RUN alembic upgrade head
+RUN python3 startup.py --all
 
 EXPOSE 80
 
