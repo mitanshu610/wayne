@@ -40,7 +40,6 @@ class Settings(BaseSettings):
     log_level: str = LogLevel.INFO.value
     connection_manager: Optional[ConnectionManager] = None
 
-    kafka_bootstrap_servers: str = args.kafka_broker_list
     BASE_DIR: ClassVar[str] = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     sentry_sample_rate: float = 1.0
     sentry_environment: str = args.sentry_environment
