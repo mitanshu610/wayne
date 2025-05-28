@@ -5,7 +5,7 @@ debug: true
 mode: "server"
 server_type: "public"
 payments_main_url: "http://localhost:8081"
-postgres_fynix_wayne_read_write: "postgresql+psycopg2://postgres:postgres@host.docker.:5432/payments"
+postgres_fynix_wayne_read_write: "postgresql+psycopg2://postgres:postgres@host.docker.internal:5432/payments"
 redis_payments_url: "redis://127.0.0.1:6379/4"
 consumer_type: "azure_pr_event_emitter_consumer"
 clerk_secret_key: "sk_test_aRZHMzYk1wWhF6DwOe9Pi7jts7zAd5ICLNHAnEimfg"
