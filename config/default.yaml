@@ -1,0 +1,32 @@
+env: "local"
+port: 8083
+host: "localhost"
+debug: true
+mode: "server"
+server_type: "public"
+payments_main_url: "http://localhost:8081"
+postgres_fynix_wayne_read_write: "postgresql+psycopg2://postgres:postgres@127.0.0.1:5432/payments"
+redis_payments_url: "redis://127.0.0.1:6379/4"
+consumer_type: "azure_pr_event_emitter_consumer"
+clerk_secret_key: "sk_test_aRZHMzYk1wWhF6DwOe9Pi7jts7zAd5ICLNHAnEimfg"
+realm: "fexz0"
+sentry_environment: "development"
+razorpay_api_key: "rzp_test_Ny4TqX0hMwCgPz"
+razorpay_api_secret: "jSfVfJ6PVdZnvbEJhO2W1m2R"
+razorpay_api_base_url: "https://api.razorpay.com/v1"
+
+paddle_api_secret: "702a084156cf312a6ad3a35aa9c7f0138ec33734aa1ff475ca"
+paddle_client_token: "test_432e7fab7617706d32af277d69a"
+paddle_api_base_url: "https://sandbox-api.paddle.com"
+
+kafka_broker_list: "127.0.0.1:9092"
+pro_trial_expiration_time_seconds: 240
+sentry_dsn: ""
+subscription_cancellation_at: "next_billing_period"
+
+
+K8S_POD_NAME: "temp"
+K8S_POD_NAMESPACE: "temp"
+K8S_NODE_NAME: "temp"
+SENTRY_DSN: ""
+fallback_plan_id: "1f016e25-8b84-6348-b561-9ee0da82673d"
