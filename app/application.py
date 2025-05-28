@@ -4,7 +4,6 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from config.logging import logger
-from config.sentry import configure_sentry
 from app.router import api_router
 from utils.custom_middleware import SecurityHeadersMiddleware
 from utils.load_config import run_on_startup, run_on_exit
@@ -45,7 +44,6 @@ def get_app() -> FastAPI:
 
     :return: application.
     """
-    configure_sentry()
 
     payments_app = FastAPI(
         debug=True,
@@ -67,7 +65,7 @@ def get_app() -> FastAPI:
 
     payments_app.include_router(api_router)
     payments_app.add_middleware(SessionMiddleware, secret_key="** Session Middleware **")
-    payments_app.add_middleware(SecurityHeadersMiddleware)
+    # payments_app.add_middleware(SecurityHeadersMiddleware)    
 
     FastAPIInstrumentor.instrument_app(payments_app)
     return payments_app
