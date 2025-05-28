@@ -37,9 +37,6 @@ COPY ./requirements/requirements.txt .
 
 RUN pip3 install --upgrade pip setuptools wheel && pip3 install -r ./requirements.txt
 
-COPY . .
-RUN git rev-parse HEAD > gitsha && rm -rf .git
-
 
 
 # Update system packages and install required dependencies again in the runtime image, ensuring Vim LTS version
